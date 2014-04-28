@@ -14,17 +14,15 @@
 
 
 // constructor
-Array::Array(int upper, int lower)
+Array::Array(const int upper, const int lower) : m_lower(lower), m_size(upper - lower + 1)
 {
 	if (lower > upper)
 	{
 		cout << "Lower bound must be less than or equal to upper bound.\n" ;
 		exit(EXIT_FAILURE);
 	}
-	m_lower = lower;
 	
 	// dynamically set upper and lower bound
-	m_size = upper - lower + 1;
 	m_Array = new ELEMENT_TYPE[m_size];
 
 	if (!m_Array)
@@ -41,7 +39,7 @@ Array::Array(int upper, int lower)
 }
 
 // copy constructor
-Array::Array(const Array &rhs)
+Array::Array(const Array &rhs) : m_lower(rhs.m_lower), m_size(rhs.m_size)
 {
 	// setting member variables
 	m_Array = new ELEMENT_TYPE[rhs.m_size];
@@ -51,9 +49,6 @@ Array::Array(const Array &rhs)
 		cout << "Memory allocation failed\n";
 		exit(EXIT_FAILURE);
 	}
-
-	m_lower = rhs.m_lower;
-	m_size = rhs.m_size;
 
 	for (int i = 0; i < m_size; i++)
 	{
@@ -74,57 +69,57 @@ void Array::set(int index, ELEMENT_TYPE val)
 }
 
 // returns elements value
-Array::ELEMENT_TYPE Array::get(int index)
+Array::ELEMENT_TYPE Array::get(int index) const
 {
 	return m_Array[index - m_lower];
 }
 
 // return lower bound
-int Array::lowerBound()
+int Array::lowerBound() const
 {
 	return m_lower;
 }
 
 // return upper bound
-int Array::upperBound()
+int Array::upperBound() const
 {
 	return m_size + m_lower - 1;
 }
 
 // return size of array
-int Array::numElements()
+int Array::numElements() const
 {
 	return m_size;
 }
 
 // returns size of Array in bytes
-int Array::size()
+int Array::size() const
 {
 	return sizeof(ELEMENT_TYPE) * m_size;
 }
 
 // SafeArray constructor
-SafeArray::SafeArray(int upper, int lower):
+SafeArray::SafeArray(const int upper, const int lower):
 Array(upper, lower)
 {
 }
 
 // SafeArray set element value
-void SafeArray::set(int index, ELEMENT_TYPE val)
+void SafeArray::set(const int index, const ELEMENT_TYPE val)
 {
 	boundChecker(index);
-	Array::set(index, numElements());
+	Array::set(index, val);
 }
 
 // SafeArray get element value
-Array::ELEMENT_TYPE SafeArray::get(int index)
+Array::ELEMENT_TYPE SafeArray::get(const int index) const
 {
 	boundChecker(index);
 	return Array::get(index);
 }
 
 // checks if index is in bounds
-void SafeArray::boundChecker(int index)
+void SafeArray::boundChecker(const int index) const
 {
 	if (index < lowerBound() || index > numElements())
 	{

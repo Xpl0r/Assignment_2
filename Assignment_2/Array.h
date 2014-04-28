@@ -20,17 +20,17 @@ protected:
 
 public:
 	//constructors
-	Array(int upper, int lower = 0);
+	Array(const int upper, const int lower = 0);
 	Array(const Array &rhs);	// copy constructor
 
 	~Array();
 
-	void set(int index, ELEMENT_TYPE val);
-	ELEMENT_TYPE get(int index);
-	int lowerBound();
-	int upperBound();
-	int numElements();
-	int size();
+	void set(const int index, const ELEMENT_TYPE val);
+	ELEMENT_TYPE get(const int index) const;
+	int lowerBound() const;
+	int upperBound() const;
+	int numElements() const;
+	int size() const;
 
 private:
 	ELEMENT_TYPE *m_Array;
@@ -41,11 +41,11 @@ private:
 class SafeArray : public Array
 {
 public:
-	SafeArray(int upper, int lower);
+	SafeArray(const int upper, const int lower);
 
-	void set(int index, ELEMENT_TYPE val);
-	ELEMENT_TYPE get(int index);
+	void set(const int index, const ELEMENT_TYPE val);
+	ELEMENT_TYPE get(int index) const;
 
 private:
-	void boundChecker(int index);
+	void boundChecker(const int index) const;
 };
