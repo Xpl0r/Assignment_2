@@ -9,7 +9,7 @@ int main()
 	copiedArray.set(2, 27);
 	cout << copiedArray.get(2);
 
-	
+	cout << "dustin like cms"
 
 	std::cin.ignore();
 	return 0;
