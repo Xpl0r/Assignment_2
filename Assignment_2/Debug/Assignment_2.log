@@ -1,0 +1,30 @@
+﻿Build started 4/27/2014 6:45:52 PM.
+     1>Project "H:\C++\Spring_2014\Assignment_2\Assignment_2\Assignment_2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files\Visual Studio 2013 Professional 32-bit (English)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Array.cpp Source.cpp
+         Source.cpp
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(44): error C2059: syntax error : 'public'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(44): error C2238: unexpected token(s) preceding ';'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2143: syntax error : missing ';' before ':'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2059: syntax error : ':'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2059: syntax error : 'public'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2039: 'SafeArray' : is not a member of 'Array'
+                 h:\c++\spring_2014\assignment_2\assignment_2\array.h(17) : see declaration of 'Array'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(51): error C2143: syntax error : missing ';' before '{'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(51): error C2447: '{' : missing function header (old-style formal list?)
+         Array.cpp
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(44): error C2059: syntax error : 'public'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(44): error C2238: unexpected token(s) preceding ';'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2143: syntax error : missing ';' before ':'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2059: syntax error : ':'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2059: syntax error : 'public'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(50): error C2039: 'SafeArray' : is not a member of 'Array'
+                 h:\c++\spring_2014\assignment_2\assignment_2\array.h(17) : see declaration of 'Array'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(51): error C2143: syntax error : missing ';' before '{'
+     1>h:\c++\spring_2014\assignment_2\assignment_2\array.h(51): error C2447: '{' : missing function header (old-style formal list?)
+         Generating Code...
+     1>Done Building Project "H:\C++\Spring_2014\Assignment_2\Assignment_2\Assignment_2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.96
