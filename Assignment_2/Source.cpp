@@ -3,18 +3,13 @@
 
 int main()
 {
-	Array DustinArray(5, 2);
+	Array testArray(5, 2);
+	Array copiedArray(testArray);
 
-	cout << "Lower: " << DustinArray.lowerBound() << "\n"
-		<< "Upper: " << DustinArray.upperBound() << "\n"
-		<< "numElements: " << DustinArray.numElements() << "\n";
+	copiedArray.set(2, 27);
+	cout << copiedArray.get(2);
 
-	DustinArray.set(5, 27);
-
-	cout << "get value of element : " << DustinArray.get(5) << "\n";
-
-	cout << "size in bytes: " << DustinArray.size();
-
+	
 
 	std::cin.ignore();
 	return 0;

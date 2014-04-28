@@ -43,6 +43,9 @@ class SafeArray : public Array
 public:
 	SafeArray(int upper, int lower);
 
-	void set();
-	void get();
+	void set(int index, ELEMENT_TYPE val);
+	ELEMENT_TYPE get(int index);
+
+private:
+	void boundChecker(int index);
 };

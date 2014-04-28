@@ -16,7 +16,7 @@
 // constructor
 Array::Array(int upper, int lower)
 {
-	if (lower >= upper)
+	if (lower > upper)
 	{
 		cout << "Lower bound must be less than or equal to upper bound.\n" ;
 		exit(EXIT_FAILURE);
@@ -30,6 +30,7 @@ Array::Array(int upper, int lower)
 	if (!m_Array)
 	{
 		cout << "Memory allocation failed\n";
+		exit(EXIT_FAILURE);
 	}
 
 	// clear elements in array
@@ -48,6 +49,7 @@ Array::Array(const Array &rhs)
 	if (!m_Array)
 	{
 		cout << "Memory allocation failed\n";
+		exit(EXIT_FAILURE);
 	}
 
 	m_lower = rhs.m_lower;
@@ -57,7 +59,6 @@ Array::Array(const Array &rhs)
 	{
 		m_Array[i] = rhs.m_Array[i];
 	}
-
 }
 
 // destructor
@@ -102,21 +103,32 @@ int Array::size()
 	return sizeof(ELEMENT_TYPE) * m_size;
 }
 
+// SafeArray constructor
 SafeArray::SafeArray(int upper, int lower):
 Array(upper, lower)
 {
-	if ()
+}
+
+// SafeArray set element value
+void SafeArray::set(int index, ELEMENT_TYPE val)
+{
+	boundChecker(index);
+	Array::set(index, numElements());
+}
+
+// SafeArray get element value
+Array::ELEMENT_TYPE SafeArray::get(int index)
+{
+	boundChecker(index);
+	return Array::get(index);
+}
+
+// checks if index is in bounds
+void SafeArray::boundChecker(int index)
+{
+	if (index < lowerBound() || index > numElements())
 	{
-
+		cout << "Error: Index not within bounds.\n";
+		exit(EXIT_FAILURE);
 	}
-}
-
-void SafeArray::set()
-{
-	
-}
-
-void SafeArray::get()
-{
-	
 }
